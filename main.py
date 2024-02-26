@@ -34,7 +34,7 @@ while True:
     message = client.beta.threads.messages.create(
     thread_id=thread.id,
     role="user",
-    content=console.input("[red]You: [/red]")
+    content=console.input("\n [red]You: [/red]")
     )
     
     run = client.beta.threads.runs.create(
@@ -49,5 +49,5 @@ while True:
     messages = client.beta.threads.messages.list(thread_id=thread.id)
     new_message = messages.data[0].content[0].text.value
     
-    assistant_response = Markdown("""\n\033[1;32mAssitant: \033[0m {}\n""".format(new_message))
+    assistant_response = Markdown(f"\033[1;32mAssitant: \033[0m \n{new_message}")
     console.print(assistant_response)
