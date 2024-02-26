@@ -33,7 +33,6 @@ while True:
     )
     
     while run.status != "completed":
-        # Be nice to the API
         time.sleep(0.5)
         run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
     
