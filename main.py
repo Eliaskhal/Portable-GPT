@@ -16,7 +16,7 @@ greeting_text = """# \033[1;36mCodeCraft Assistant\033[0m
 markdown_text = Markdown(greeting_text)
 console.print(markdown_text)
 
-client = OpenAI(api_key=api_key)
+if api_key != None: client = OpenAI(api_key=api_key)
 
 with open('prompt.txt', 'r') as f:
     prompt = f.read()
